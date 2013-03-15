@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf8'?>
-<testsuite failures="0" name="clusters.Test of cluster section" skips="0" tests="1" time="0.25"><testcase classname="clusters.Test of cluster section" name="User can get clusters" time="0.25"><system-out>
+<testsuite failures="0" name="clusters.Test of cluster section" skips="0" tests="1" time="0.269"><testcase classname="clusters.Test of cluster section" name="User can get cluster" time="0.269"><system-out>
 <![CDATA[Steps:
-        When User see clusters ... passed
+        When User see cluster ... passed
         Then Response is "200" ... passed
 
 Captured stdout:
