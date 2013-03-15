@@ -2,7 +2,7 @@
 Feature: Test of template section
 
     Scenario: User can get template
-        When User see template
+        When User see templates
         Then Response is "200"
 
    # Scenario: User can create template

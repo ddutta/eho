@@ -1,27 +1,15 @@
 <?xml version='1.0' encoding='utf8'?>
-<testsuite failures="0" name="template.Test of template section" skips="0" tests="2" time="0.464"><testcase classname="template.Test of template section" name="User can get template" time="0.261"><system-out>
+<testsuite failures="0" name="template.Test of template section" skips="0" tests="1" time="0.291"><testcase classname="template.Test of template section" name="User can get template" time="0.291"><system-out>
 <![CDATA[Steps:
-        When User see template ... passed
+        When User see templates ... passed
         Then Response is "200" ... passed
 
 Captured stdout:
 URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
 response = 200
 
+[{u'job_tracker': {u'heap_size': u'896'}, u'name': u'jt_nn.small', u'tenant_id': u'tenant-01', u'node_type': {u'processes': [u'job_tracker', u'name_node'], u'name': u'JT+NN'}, u'flavor_id': u'm1.small', u'name_node': {u'heap_size': u'896'}, u'id': u'1aceae318a2d452fa8e0f933a744988b'}, {u'job_tracker': {u'heap_size': u'1792'}, u'name': u'jt_nn.medium', u'tenant_id': u'tenant-01', u'node_type': {u'processes': [u'job_tracker', u'name_node'], u'name': u'JT+NN'}, u'flavor_id': u'm1.medium', u'name_node': {u'heap_size': u'1792'}, u'id': u'506b3e1407cc407aa344aad7430ff419'}, {u'job_tracker': {u'heap_size': u'1792'}, u'name': u'jt.small', u'tenant_id': u'tenant-01', u'node_type': {u'processes': [u'job_tracker'], u'name': u'JT'}, u'flavor_id': u'm1.small', u'id': u'7ab75460a63744deb7cfa07bda33e1cc'}, {u'job_tracker': {u'heap_size': u'3712'}, u'name': u'jt.medium', u'tenant_id': u'tenant-01', u'node_type': {u'processes': [u'job_tracker'], u'name': u'JT'}, u'flavor_id': u'm1.medium', u'id': u'b2a0b204d6a94209be7253ebb38e62a6'}, {u'name': u'nn.small', u'tenant_id': u'tenant-01', u'node_type': {u'processes': [u'name_node'], u'name': u'NN'}, u'flavor_id': u'm1.small', u'name_node': {u'heap_size': u'1792'}, u'id': u'5cba6fdb51034c5ab66b8a83f55b0521'}, {u'name': u'nn.medium', u'tenant_id': u'tenant-01', u'node_type': {u'processes': [u'name_node'], u'name': u'NN'}, u'flavor_id': u'm1.medium', u'name_node': {u'heap_size': u'3712'}, u'id': u'8d76687121f34866b36baef2e07864ca'}, {u'name': u'tt_dn.small', u'task_tracker': {u'heap_size': u'896'}, u'tenant_id': u'tenant-01', u'data_node': {u'heap_size': u'896'}, u'node_type': {u'processes': [u'task_tracker', u'data_node'], u'name': u'TT+DN'}, u'flavor_id': u'm1.small', u'id': u'd1baaec8429741b0bd5fffac5c0b3c6c'}, {u'name': u'tt_dn.medium', u'task_tracker': {u'heap_size': u'1792'}, u'tenant_id': u'tenant-01', u'data_node': {u'heap_size': u'1792'}, u'node_type': {u'processes': [u'task_tracker', u'data_node'], u'name': u'TT+DN'}, u'flavor_id': u'm1.medium', u'id': u'c6b7717d2dcd4285a8f29f61bb6befa6'}]
 200 == 200
-
-]]>
-</system-out></testcase><testcase classname="template.Test of template section" name="User can delete template" time="0.203"><system-out>
-<![CDATA[Steps:
-        When User delete template ... passed
-        Then Response is "204" ... passed
-
-Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates/6d99bb3437b44144b8878380014b8e37
-data = {"node_template": {"name_node": {"heap_size": "2345"}, "node_type": "JT+NN", "job_tracker": {"max_reduce_tasks": "1", "max_map_tasks": "3", "task_heap_size": "640", "heap_size": "384"}, "flavor_id": "m1.medium", "name": "QA_template_16"}}
-response = 204
-
-204 == 204
 
 ]]>
 </system-out></testcase></testsuite>

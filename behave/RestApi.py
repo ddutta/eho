@@ -21,6 +21,13 @@ class RestApi():
            print("URL = %s\ndata = %s\nresponse = %s\n" % (URL, body, resp.status_code))
        return resp
 
+    def execute_put(self, url, body = ""):
+        URL = self.baseurl + url
+        resp = requests.put(URL, data = body, headers = {"x-auth-token": self.token,"Content-Type":"application/json"})
+        if echo:
+            print("URL = %s\ndata = %s\nresponse = %s\n" % (URL, body, resp.status_code))
+        return resp
+
     def execute_get(self, url):
         URL = self.baseurl + url
         resp = requests.get(URL, headers = {"x-auth-token": self.token})
@@ -28,15 +35,20 @@ class RestApi():
             print("URL = %s\nresponse = %s\n" % (URL, resp.status_code))
         return resp
 
-    def execute_delete(self, url, body = ""):
+    def execute_delete(self, url):
         URL = self.baseurl + url
-        resp = requests.delete(URL, data = body, headers = {"x-auth-token": self.token, "Content-Type":"application/json"})
+        resp = requests.delete(URL, headers = {"x-auth-token": self.token, "Content-Type":"application/json"})
         if echo:
-            print("URL = %s\ndata = %s\nresponse = %s\n" % (URL, body, resp.status_code))
+            print("URL = %s\nresponse = %s\n" % (URL, resp.status_code))
         return resp
 
-    def get_cluster(self):
+    def get_clusters(self):
         url = "/clusters"
+        res = self.execute_get(url)
+        return res
+
+    def get_cluster(self, cluster_id):
+        url = "/clusters/" + str(cluster_id)
         res = self.execute_get(url)
         return res
 	
@@ -46,25 +58,40 @@ class RestApi():
         res = self.execute_post(url, body)
         return res
 	
-    def delete_cluster(self, cluster):
-        url = "/clusters/dcb487e5537043309073ce63b0938c07"
-        body = cluster
-        res = self.execute_delete(url, body)
+    def delete_cluster(self, cluster_id):
+        url = "/clusters/"+str(cluster_id)
+        res = self.execute_delete(url)
+        return res
+
+    def put_cluster(self, cluster_body, cluster_id):
+        url = "/clusters/" + str(cluster_id)
+        body = cluster_body
+        res = self.execute_put(url, body)
         return res
 	
-    def get_template(self):
+    def get_templates(self):
         url = "/node-templates"
         res = self.execute_get(url)
         return res
 
-    def create_template(self, template):
-	url = "/node-templates"
-        body = template
+    def get_template(self, template_id):
+        url = "/node-templates/" + str(template_id)
+        res = self.execute_get(url)
+        return res
+
+    def create_template(self, template_body):
+        url = "/node-templates"
+        body = template_body
         res = self.execute_post(url, body)
         return res
 	
-    def delete_template(self, template):
-        url = "/node-templates/6d99bb3437b44144b8878380014b8e37"
-        body = template
-        res = self.execute_delete(url, body)
+    def delete_template(self, template_id):
+        url = "/node-templates/" + str(template_id)
+        res = self.execute_delete(url)
+        return res
+
+    def put_template(self, template_body, template_id):
+        url = "/node-templates/" + str(template_id)
+        body = template_body
+        res = self.execute_put(url, body)
         return res

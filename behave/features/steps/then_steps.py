@@ -7,6 +7,24 @@ def chkStatus(context, res_code):
     print("%s == %s" % (status_code, res_code))
     assert status_code == int(res_code.strip())
 
+@Then('Response list of list clusters:"{list}"')
+def response_list_clusters(context, list):
+    global res_content_list_clusters
+    names = []
+    loop = res_content_list_clusters['clusters']
+    for x in loop:
+        names.append(x.pop(u'name'))
+    print("%s == %s" % (names, list))
+    assert str(names) == str(list)
+
+@Then('Response for list cluster by id is:"{list}"')
+def response_get_cluster(context, list):
+    global res_content_get_cluster
+    cluster = res_content_get_cluster['cluster']
+    id = cluster.pop(u'id')
+    print("%s == %s" % (cluster, list))
+    assert str(cluster) == str(list)
+
 #@Then('"{first}" is "{second}"')
 #def chkStatus(context, first, second):
 #    global res1, res2
