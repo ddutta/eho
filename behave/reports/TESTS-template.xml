@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf8'?>
+<testsuite failures="0" name="template.Test of template section" skips="0" tests="2" time="0.737"><testcase classname="template.Test of template section" name="User can get templates" time="0.28"><system-out>
+<![CDATA[Steps:
+        When User see templates ... passed
+        Then Response is "200" ... passed
+
+Captured stdout:
+URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
+response = 200
+
+200 == 200
+
+]]>
+</system-out></testcase><testcase classname="template.Test of template section" name="User can get templates" time="0.457"><system-out>
+<![CDATA[Steps:
+        When User can create template ... passed
+        Then Response is "202" ... passed
+
+Captured stdout:
+URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates.json
+data = {"node_template": {"name_node": {"heap_size": "2345"}, "node_type": "JT+NN", "job_tracker": {"max_reduce_tasks": "1", "max_map_tasks": "3", "task_heap_size": "640", "heap_size": "384"}, "flavor_id": "m1.medium", "name": "QA_template_name_23"}}
+response = 202
+
+202 == 202
+
+]]>
+</system-out></testcase></testsuite>
