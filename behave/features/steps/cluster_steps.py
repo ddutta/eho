@@ -3,12 +3,12 @@ from random import choice, randint
 from string import ascii_lowercase
 from sys import path
 from time import sleep
-
-path.append(path.append(".."))
-
 import RestApi
 import json
+
+path.append(path.append(".."))
 rest = RestApi.RestApi()
+
 cluster_ids = []
 
 @When ('User see clusters')
@@ -70,7 +70,7 @@ def put_cluster(context, n):
     global status_code
     global res_content
     global cluster_body
-    res=rest.create_cluster(cluster_body, cluster_ids[n])
+    res = rest.create_cluster(cluster_body, cluster_ids[n])
     status_code = res.status_code
     if status_code == 202:
         res_content = json.loads(res.content)
