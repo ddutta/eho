@@ -7,7 +7,7 @@ echo = True
 class RestApi():
     def __init__(self):
         self.baseurl = ""
-        self.token = "5af9c6e50aa94dfc92f5163f68f02909"
+        self.token = "ebd4b55eebee47f09a9ab53e779ff937"
         for line in open(join(dirname(__file__), "config.txt"), "r"):
             m = match('^baseurl\s*=\s*\"(?P<url>http://.*)/*\"$', line)
             if m:

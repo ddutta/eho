@@ -25,13 +25,20 @@ def response_get_cluster(context, list):
     print("%s == %s" % (cluster, list))
     assert str(cluster) == str(list)
 
-#@Then('"{first}" is "{second}"')
-#def chkStatus(context, first, second):
-#    global res1, res2
-#    print("%s == %s" % (res1, res2))
-#    assert res1 == res2
-#
-#@Then ('API returns "{access_token}"')
-#def impl(context, access_token):
-#    print("access_token = %s" % access_token)
-#    assert (match("[\w|\d]+-[\w|\d]+-[\w|\d]+-[\w|\d]+-[\w|\d]+", access_token) != '')
+@Then('Response list of list node_templates:"{list}"')
+def response_list_node_templates(context, list):
+    global res_content_list_templates
+    names = []
+    loop = res_content_list_templates['node_templates']
+    for x in loop:
+        names.append(x.pop(u'name'))
+    print("%s == %s" % (names, list))
+    assert str(names) == str(list)
+
+@Then('Response for list node_template by id is:"{list}"')
+def response_get_cluster(context, list):
+    global res_content_get_template
+    template = res_content_get_template['node_template']
+    id = template.pop(u'id')
+    print("%s == %s" % (template, list))
+    assert str(template) == str(list)

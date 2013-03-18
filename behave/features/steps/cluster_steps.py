@@ -22,7 +22,7 @@ def get_clusters(context):
     if status_code == 200:
         res_content_list_clusters = json.loads(res.content)
 
-@When ('User see cluster with id:"{n}"')
+@When ('User get cluster with id:"{n}"')
 def get_cluster(context, n):
     global status_code
     global res_content_get_cluster
