@@ -30,7 +30,7 @@ def get_template(context, n):
         res_content_get_template = json.loads(res.content)
 
 @When('add n_n: name="{name}", fl_id="{fl_id}", h_s="{h_s}"')
-def create_template_body(context, name, fl_id, h_s):
+def create_template_body_n_n(context, name, fl_id, h_s):
     global template_body
     data=json.dumps(dict(
         node_template=dict(
@@ -43,7 +43,53 @@ def create_template_body(context, name, fl_id, h_s):
         )))
     template_body = data
 
-    #TODO: add three template bodys
+@When('add j_t: name="{name}", fl_id="{fl_id}", h_s="{h_s}"')
+def create_template_body_j_t(context, name, fl_id, h_s):
+    global template_body
+    data=json.dumps(dict(
+        node_template=dict(
+            name='%s' % str(name),
+            node_type='JT',
+            flavor_id='%s' % str(fl_id),
+            job_tracker={
+                'heap_size': '%s' % str(h_s)
+            }
+        )))
+    template_body = data
+
+@When('add j_t+n_n: name="{name}", fl_id="{fl_id}", h_s_for_n_n="{n_n_h_s}", h_s_for_j_t="{j_t_h_s}"')
+def create_template_body_j_t_n_n(context, name, fl_id, n_n_h_s, j_t_h_s):
+    global template_body
+    data=json.dumps(dict(
+        node_template=dict(
+            name='%s' % str(name),
+            node_type='NN',
+            flavor_id='%s' % str(fl_id),
+            job_tracker={
+                'heap_size': '%s' % str(j_t_h_s)
+            },
+            name_node={
+                'heap_size': '%s' % str(n_n_h_s)
+            }
+        )))
+    template_body = data
+
+@When('add t_t+d_n: name="{name}", fl_id="{fl_id}", h_s_for_t_t="{t_t_h_s}", h_s_for_d_n="{d_n_h_s}"')
+def create_template_body_t_t_d_n(context, name, fl_id, t_t_h_s, d_n_h_s):
+    global template_body
+    data=json.dumps(dict(
+        node_template=dict(
+            name='%s' % str(name),
+            node_type='NN',
+            flavor_id='%s' % str(fl_id),
+            task_tracker={
+                'heap_size': '%s' % str(t_t_h_s)
+            },
+            data_node={
+                'heap_size': '%s' % str(d_n_h_s)
+            }
+        )))
+    template_body = data
 
 @When ('User create template')
 def add_template(context):
