@@ -63,7 +63,7 @@ def create_template_body_j_t_n_n(context, name, fl_id, n_n_h_s, j_t_h_s):
     data=json.dumps(dict(
         node_template=dict(
             name='%s' % str(name),
-            node_type='NN',
+            node_type='JT+NN',
             flavor_id='%s' % str(fl_id),
             job_tracker={
                 'heap_size': '%s' % str(j_t_h_s)
@@ -80,7 +80,7 @@ def create_template_body_t_t_d_n(context, name, fl_id, t_t_h_s, d_n_h_s):
     data=json.dumps(dict(
         node_template=dict(
             name='%s' % str(name),
-            node_type='NN',
+            node_type='TT+DN',
             flavor_id='%s' % str(fl_id),
             task_tracker={
                 'heap_size': '%s' % str(t_t_h_s)
