@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf8'?>
+<testsuite failures="0" name="add_clusters.Test of cluster section" skips="0" tests="1" time="0.07"><testcase classname="add_clusters.Test of cluster section" name="User can get clusters" time="0.07"><system-out>
+<![CDATA[Steps:
+        When User see clusters ... passed
+        Then Response is "200" ... passed
+
+Captured stdout:
+URL = http://127.0.0.1:8080/v0.2/clusters
+response = 200
+
+200 == 200
+
+]]>
+</system-out></testcase></testsuite>
