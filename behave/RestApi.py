@@ -7,12 +7,29 @@ echo = True
 class RestApi():
     def __init__(self):
         self.baseurl = ""
-        self.token = "ebd4b55eebee47f09a9ab53e779ff937"
+        self.token = ""
         for line in open(join(dirname(__file__), "config.txt"), "r"):
             m = match('^baseurl\s*=\s*\"(?P<url>http://.*)/*\"$', line)
             if m:
                 self.baseurl = m.group("url")
+
+            m = match('^token\s*=\s*\"(?P<token>.*)/*\"$', line)
+            if m:
+                self.token = m.group("token")
                 break
+
+        # for line in open(join(dirname(__file__), "config.txt"), "r"):
+        #     m = match('^baseurl\s*=\s*\"(?P<url>http://.*)/*\"$', line)
+        #     if m:
+        #         self.baseurl = m.group("url")
+        #         break
+        #
+        # self.token = ""
+        # for line in open(join(dirname(__file__), "config.txt"), "r"):
+        #     m = match('^token\s*=\s*\"(?P<token>.*)/*\"$', line)
+        #     if m:
+        #         self.token = m.group("token")
+        #         break
 
     def execute_post(self, url, body = ""):
        URL = self.baseurl + url
@@ -37,7 +54,7 @@ class RestApi():
 
     def execute_delete(self, url):
         URL = self.baseurl + url
-        resp = requests.delete(URL, headers = {"x-auth-token": self.token, "Content-Type":"application/json"})
+        resp = requests.delete(URL, headers = {"x-auth-token": self.token})
         if echo:
             print("URL = %s\nresponse = %s\n" % (URL, resp.status_code))
         return resp

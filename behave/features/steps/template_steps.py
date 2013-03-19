@@ -29,7 +29,7 @@ def get_template(context, n):
     if status_code == 200:
         res_content_get_template = json.loads(res.content)
 
-@When('add n_n: name="{name}", fl_id="{fl_id}", h_s="{h_s}"')
+@When('name="{name}", fl_id="{fl_id}", h_s="{h_s}"')
 def create_template_body(context, name, fl_id, h_s):
     global template_body
     data=json.dumps(dict(

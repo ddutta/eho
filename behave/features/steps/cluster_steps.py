@@ -31,16 +31,16 @@ def get_cluster(context, n):
     if status_code == 200:
         res_content_get_cluster = json.loads(res.content)
 
-@When('name:"{name}" and im_id="{im_id}" and n_n="{n_n}" and count="{count_n_n}" and d_n="{d_n}" and count="{count_d_n}"')
-def create_cluster_body(context, name, im_id, n_n, count_n_n, d_n, count_d_n):
+@When('name:"{name}", im_id="{im_id}", jt_nn="{jt_nn}" & num="{num_jt_nn}", tt_dn="{tt_dn}" & num="{num_tt_dn}"')
+def create_cluster_body(context, name, im_id, jt_nn, num_jt_nn, tt_dn, num_tt_dn):
     global cluster_body
     data=json.dumps(dict(
         cluster = dict(
             name = '%s' % (name),
             base_image_id = '%s' % (im_id),
             node_templates = {
-                '%s' % str(n_n) : count_n_n,
-                '%s' % str(d_n) : count_d_n,
+                '%s' % str(jt_nn) : num_jt_nn,
+                '%s' % str(tt_dn) : num_tt_dn,
             }
         )))
     cluster_body = data

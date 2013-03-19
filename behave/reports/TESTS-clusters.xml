@@ -1,84 +1,74 @@
 <?xml version='1.0' encoding='utf8'?>
-<testsuite failures="0" name="clusters.Test of cluster section" skips="0" tests="6" time="61.894"><testcase classname="clusters.Test of cluster section" name="User can get clusters" time="0.265"><system-out>
+<testsuite failures="0" name="clusters.Test of cluster section" skips="0" tests="6" time="61.909"><testcase classname="clusters.Test of cluster section" name="User can get clusters" time="0.303"><system-out>
 <![CDATA[Steps:
         When User see clusters ... passed
         Then Response is "200" ... passed
-         And Response list of list clusters:"[u'hadoop']" ... passed
 
 Captured stdout:
 URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters
 response = 200
 
 200 == 200
-[u'hadoop'] == [u'hadoop']
 
 ]]>
-</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can create cluster" time="60.264"><system-out>
+</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can create cluster" time="60.467"><system-out>
 <![CDATA[Steps:
-        When name:"QAcluster" and im_id="d9342ba8-4c51-441c-8d5b-f9e14a901299" and n_n="jt_nn.medium" and count="1" and d_n="tt_dn.small" and count="1" ... passed
+        When name:"QAcluster", im_id="d9342ba8-4c51-441c-8d5b-f9e14a901299", jt_nn="jt_nn.medium" & num="1", tt_dn="tt_dn.small" & num="1" ... passed
          And User create cluster ... passed
-        Then Response is "202" ... passed
 
 Captured stdout:
 URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters
 data = {"cluster": {"node_templates": {"jt_nn.medium": "1", "tt_dn.small": "1"}, "name": "QAcluster", "base_image_id": "d9342ba8-4c51-441c-8d5b-f9e14a901299"}}
 response = 202
 
-202 == 202
 
 ]]>
-</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can get clusters" time="0.257"><system-out>
+</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can get clusters" time="0.279"><system-out>
 <![CDATA[Steps:
         When User see clusters ... passed
         Then Response is "200" ... passed
-         And Response list of list clusters:"[u'hadoop', u'QAcluster']" ... passed
 
 Captured stdout:
 URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters
 response = 200
 
 200 == 200
-[u'hadoop', u'QAcluster'] == [u'hadoop', u'QAcluster']
 
 ]]>
-</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can get cluster by ID" time="0.254"><system-out>
+</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can get cluster by ID" time="0.272"><system-out>
 <![CDATA[Steps:
         When User get cluster with id:"0" ... passed
         Then Response is "200" ... passed
-         And Response for list cluster by id is:"{u'status': u'Starting', u'service_urls': {}, u'name': u'QAcluster', u'base_image_id': u'd9342ba8-4c51-441c-8d5b-f9e14a901299', u'node_templates': {u'jt_nn.medium': 1, u'tt_dn.small': 1}, u'nodes': []}" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters/bc02d1c2d6444085b9f7e1796939fd13
+URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters/546ca60d2ec7418c8e57c601ab38490a
 response = 200
 
 200 == 200
-{u'status': u'Starting', u'service_urls': {}, u'name': u'QAcluster', u'base_image_id': u'd9342ba8-4c51-441c-8d5b-f9e14a901299', u'node_templates': {u'jt_nn.medium': 1, u'tt_dn.small': 1}, u'nodes': []} == {u'status': u'Starting', u'service_urls': {}, u'name': u'QAcluster', u'base_image_id': u'd9342ba8-4c51-441c-8d5b-f9e14a901299', u'node_templates': {u'jt_nn.medium': 1, u'tt_dn.small': 1}, u'nodes': []}
 
 ]]>
-</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can delete cluster by ID" time="0.478"><system-out>
+</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can delete cluster by ID" time="0.435"><system-out>
 <![CDATA[Steps:
         When User delete cluster with id:"0" ... passed
         Then Response is "204" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters/bc02d1c2d6444085b9f7e1796939fd13
+URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters/546ca60d2ec7418c8e57c601ab38490a
 response = 204
 
 204 == 204
 
 ]]>
-</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can get clusters" time="0.377"><system-out>
+</system-out></testcase><testcase classname="clusters.Test of cluster section" name="User can get clusters" time="0.152"><system-out>
 <![CDATA[Steps:
         When User see clusters ... passed
         Then Response is "200" ... passed
-         And Response list of list clusters:"[u'hadoop']" ... passed
 
 Captured stdout:
 URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/clusters
 response = 200
 
 200 == 200
-[u'hadoop'] == [u'hadoop']
 
 ]]>
 </system-out></testcase></testsuite>
