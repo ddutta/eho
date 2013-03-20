@@ -53,7 +53,7 @@ def add_cluster(context):
     res = rest.create_cluster(cluster_body)
     status_code = res.status_code
     if status_code == 202:
-        sleep(60)
+        #sleep(60)
         res_content = json.loads(res.content)
         cluster_ids.append(res_content['cluster'].get(u'id'))
     

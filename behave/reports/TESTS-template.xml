@@ -1,73 +1,73 @@
 <?xml version='1.0' encoding='utf8'?>
-<testsuite failures="0" name="template.Test of template section" skips="0" tests="6" time="2.121"><testcase classname="template.Test of template section" name="User can see templates" time="0.265"><system-out>
+<testsuite failures="0" name="template.Test of template section" skips="0" tests="6" time="0.496"><testcase classname="template.Test of template section" name="User can see templates" time="0.063"><system-out>
 <![CDATA[Steps:
         When User see templates ... passed
         Then Response is "200" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
+URL = http://192.168.19.234:8080/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
 response = 200
 
 200 == 200
 
 ]]>
-</system-out></testcase><testcase classname="template.Test of template section" name="User can create template" time="0.557"><system-out>
+</system-out></testcase><testcase classname="template.Test of template section" name="User can create template" time="0.135"><system-out>
 <![CDATA[Steps:
         When name_node: name="QA_n_n", fl_id="m1.tiny", h_s="512" ... passed
          And User create template ... passed
         Then Response is "202" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
+URL = http://192.168.19.234:8080/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
 data = {"node_template": {"name_node": {"heap_size": "512"}, "node_type": "NN", "flavor_id": "m1.tiny", "name": "QA_n_n"}}
 response = 202
 
 202 == 202
 
 ]]>
-</system-out></testcase><testcase classname="template.Test of template section" name="User can get templates" time="0.267"><system-out>
+</system-out></testcase><testcase classname="template.Test of template section" name="User can get templates" time="0.08"><system-out>
 <![CDATA[Steps:
         When User see templates ... passed
         Then Response is "200" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
+URL = http://192.168.19.234:8080/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
 response = 200
 
 200 == 200
 
 ]]>
-</system-out></testcase><testcase classname="template.Test of template section" name="User can get template by id" time="0.253"><system-out>
+</system-out></testcase><testcase classname="template.Test of template section" name="User can get template by id" time="0.059"><system-out>
 <![CDATA[Steps:
         When User get template with id: "0" ... passed
         Then Response is "200" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates/96682876e8fc4f7786379bfcce0d2929
+URL = http://192.168.19.234:8080/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates/4a6d1e38d86945a6b59b3fd4dfa3513c
 response = 200
 
 200 == 200
 
 ]]>
-</system-out></testcase><testcase classname="template.Test of template section" name="User can delete template" time="0.52"><system-out>
+</system-out></testcase><testcase classname="template.Test of template section" name="User can delete template" time="0.103"><system-out>
 <![CDATA[Steps:
         When User delete template with id: "0" ... passed
         Then Response is "204" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates/96682876e8fc4f7786379bfcce0d2929
+URL = http://192.168.19.234:8080/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates/4a6d1e38d86945a6b59b3fd4dfa3513c
 response = 204
 
 204 == 204
 
 ]]>
-</system-out></testcase><testcase classname="template.Test of template section" name="User can get templates" time="0.26"><system-out>
+</system-out></testcase><testcase classname="template.Test of template section" name="User can get templates" time="0.056"><system-out>
 <![CDATA[Steps:
         When User see templates ... passed
         Then Response is "200" ... passed
 
 Captured stdout:
-URL = http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
+URL = http://192.168.19.234:8080/v0.2/6b26f08455ec449ea7a2d3da75339255/node-templates
 response = 200
 
 200 == 200

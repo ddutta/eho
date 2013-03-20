@@ -18,19 +18,6 @@ class RestApi():
                 self.token = m.group("token")
                 break
 
-        # for line in open(join(dirname(__file__), "config.txt"), "r"):
-        #     m = match('^baseurl\s*=\s*\"(?P<url>http://.*)/*\"$', line)
-        #     if m:
-        #         self.baseurl = m.group("url")
-        #         break
-        #
-        # self.token = ""
-        # for line in open(join(dirname(__file__), "config.txt"), "r"):
-        #     m = match('^token\s*=\s*\"(?P<token>.*)/*\"$', line)
-        #     if m:
-        #         self.token = m.group("token")
-        #         break
-
     def execute_post(self, url, body = ""):
        URL = self.baseurl + url
        resp = requests.post(URL, data = body, headers = {"x-auth-token": self.token,"Content-Type":"application/json"})

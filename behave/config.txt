@@ -1,2 +1,2 @@
-baseurl = "http://172.18.79.139:9000/v0.2/6b26f08455ec449ea7a2d3da75339255"
-token = "469bcbb9aa6a43cbac50f3ddf503bfb1"
+baseurl = "http://192.168.19.234:8080/v0.2/6b26f08455ec449ea7a2d3da75339255"
+token = "da3794c850de49b79f73240b420844bc"
