@@ -42,3 +42,9 @@ def response_get_cluster(context, list):
     id = template.pop(u'id')
     print("%s == %s" % (template, list))
     assert str(template) == str(list)
+
+@Then('Error content:"{list}"')
+def error_content(content, list):
+    global error_content
+    print("%s == %s" % (error_content, list))
+    assert str(error_content) == str(list)

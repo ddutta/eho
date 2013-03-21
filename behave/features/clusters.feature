@@ -7,9 +7,21 @@ Feature: Test of cluster section
         #And Response list of list clusters:"[u'hadoop']"
 
     Scenario: User can create cluster
-        When name: "QAcluster", im_id="d9342ba8-4c51-441c-8d5b-f9e14a901299", jt_nn="jt_nn.medium" & num="1", tt_dn="tt_dn.small" & num="1"
-        And  User create cluster
+        Given cluster data
+        """
+        {"cluster": {"node_templates": {"jt_nn.medium": 1, "tt_dn.small": 1}, "name": "QAcluster", "base_image_id": "d9342ba8-4c51-441c-8d5b-f9e14a901299"}}
+        """
+        When User create cluster
         Then  Response is "202"
+
+    Scenario: User can create cluster
+        Given cluster data
+        """
+        {"cluster": {"node_templates": {"jt_nn.medium": "1", "tt_dn.small": "1"}, "name": "QAcluster2", "base_image_id": "d9342ba8-4c51-441c-8d5b-f9e14a901299"}}
+        """
+        When User create cluster
+        Then  Response is "400"
+        And Error content:"{u'error_name': u'VALIDATION_ERROR', u'error_message': u"u'1' is not of type 'integer'", u'error_code': 400}"
 
     Scenario: User can get clusters
         When  User see clusters

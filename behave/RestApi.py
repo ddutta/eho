@@ -99,3 +99,6 @@ class RestApi():
         body = template_body
         res = self.execute_put(url, body)
         return res
+
+    def get_error(self):
+        return NameError

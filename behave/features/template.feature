@@ -7,8 +7,26 @@ Feature: Test of template section
         #And Response list of list node_templates:"[u'jt_nn.small', u'jt_nn.medium', u'jt.small', u'jt.medium', u'nn.small', u'nn.medium', u'tt_dn.small', u'tt_dn.medium']"
 
     Scenario: User can create template
-        When name_node: name="QA_n_n", fl_id="m1.tiny", h_s="512"
-        And User create template
+        Given node_template body
+        """
+        {
+            "node_template": {
+                "name": "custom_user_template",
+                "node_type": "TT+DN",
+                "flavor_id": "m1.medium",
+                "task_tracker": {
+                    "heap_size": 384,
+                    "max_map_tasks": 3,
+                    "max_reduce_tasks": 1,
+                    "task_heap_size": 640
+                },
+                "data_node": {
+                    "heap_size": 384
+                }
+            }
+        }
+        """
+        When User create template
         Then Response is "202"
 
     Scenario: User can get templates
